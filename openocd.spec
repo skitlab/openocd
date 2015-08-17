@@ -9,7 +9,7 @@ Url: http://sourceforge.net/projects/openocd
 Source: %name-%version.tar
 Source10: git2cl.tar
 Source20: jimtcl.tar
-#Patch1: openocd-jimtcl0_75.patch
+Patch1: fsl-add-k22-k24-k64-flash-support.patch
 
 BuildRequires: libftdi-devel
 
@@ -26,7 +26,7 @@ hardware debugging.
 %setup
 tar -xf %SOURCE10 -C tools
 tar -xf %SOURCE20
-#%patch1 -p0
+%patch1 -p1
 
 %build
 %autoreconf
@@ -45,6 +45,7 @@ make install DESTDIR=%buildroot INSTALL="install -p"
 %doc %_datadir/%name/contrib
 %dir %_datadir/%name
 %_datadir/%name/scripts
+%_datadir/%name/OpenULINK
 %_bindir/%name
 %_infodir/%name.info*.gz
 %_mandir/man1/*

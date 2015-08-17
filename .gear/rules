@@ -1,0 +1,4 @@
+tar: openocd-upstream:.
+tar: git2cl-upstream:. name=git2cl
+tar: jimtcl-upstream:. name=jimtcl
+copy?: *.patch
